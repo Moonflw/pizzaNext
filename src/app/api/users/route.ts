@@ -1,6 +1,6 @@
-import { RequiredKeys } from './../../../../node_modules/.prisma/client/index.d';
+// import { RequiredKeys } from './../../../../node_modules/.prisma/client/index.d';
 import { NextRequest, NextResponse } from "next/server";
-import { prisma } from "@/prisma/prisma-client";
+import { prisma } from "../../../../prisma/prisma-client";
 // import { prisma } from "../../../../prisma/prisma-client";
 
 export async function GET() {
@@ -10,7 +10,7 @@ export async function GET() {
 
 export async function POST(req: NextRequest) {
     const data = await req.json()
-
+    
     const user = await prisma.user.create({
         data
     })
